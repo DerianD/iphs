@@ -25,7 +25,7 @@ SECRET_KEY = 'xs6r557g$5jl#2+gpj$^zzdn@xap$_+=-2i8d7wra83=b%r)e6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://iphs.herokuapp.com/']
 
 
 # Application definition
