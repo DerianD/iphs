@@ -1,5 +1,27 @@
 /* Mis estilos */
 
-.featurette-divider {
-  margin: 10px 0; /* Space out the Bootstrap <hr> more */
+/*body*/
+.hero.is-primary {
+    background-color: rgba(31, 219, 78, 0);
+    color: white;
 }
+
+/*Menu*/
+.button.is-info.is-inverted {
+    background-color: #ffffff;
+    color: #5b5b5c;
+}
+/*responsivo*/
+@media screen and (max-width: 768px){
+.hero.is-primary .nav-menu {
+    background-color: #42afe3;
+}
+
+.button.is-info.is-inverted {
+    background-color: white;
+    color: #42afe3;
+}
+
+}
+
+/*end*/
