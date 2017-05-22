@@ -11,6 +11,15 @@
     background-color: #ffffff;
     color: #5b5b5c;
 }
+.button:hover, .button:focus, .button.is-active {
+    color: #f5f7fa;
+}
+
+.button.is-primary {
+    background-color: #42afe3;
+    border-color: transparent;
+    color: white;
+}
 /*responsivo*/
 @media screen and (max-width: 768px){
 .hero.is-primary .nav-menu {
