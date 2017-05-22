@@ -21,4 +21,7 @@ from app import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home, name='home'),
+    url(r'^actualizaciones/', views.updates, name='updates info'),
+    url(r'^info/', views.info, name='info app'),
+    # url(r'^$', views.home, name='home'),
 ]

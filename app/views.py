@@ -7,3 +7,9 @@ from django.shortcuts import render
 
 def home(request):
     return render(request, 'index.html')
+
+def updates(request):
+    return render(request, 'updates.html')
+
+def info(request):
+    return render(request, 'info.html')
