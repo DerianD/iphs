@@ -10,10 +10,10 @@ from django.utils.text import slugify
 
 class SystemIP(models.Model):
     nombre = models.CharField(max_length = 100)
-    latitud = models.DecimalField(max_digits=150, decimal_places=8)
-    longitud = models.DecimalField(max_digits=150, decimal_places=8)
+    latitud = models.DecimalField(max_digits=150, decimal_places=20)
+    longitud = models.DecimalField(max_digits=150, decimal_places=20)
     nombrecell = models.CharField(max_length = 100)
-    ipv4 = models.DecimalField(max_digits=100, decimal_places=8)
+    ipv4 = models.CharField(max_length = 100)
     slug = models.SlugField(blank=True, unique=True)
     
     def __unicode__(self):
