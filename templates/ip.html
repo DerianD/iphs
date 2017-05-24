@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skeleton - Free Bulma template</title>
+    <link rel="stylesheet" href="{% static "css/estilosfont.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/bulma.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}">
+</head>
+
+<body>
+  <div class="hero-head">
+      <header class="nav">
+        <div class="container">
+          <div class="nav-left">
+            <a class="nav-item" href="../">
+              <h1 class="title is-3">
+                IPH
+              </h1>
+            </a>
+          </div>
+          <span class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+          <div class="nav-right nav-menu">
+            <a class="nav-item" href="../">
+              Inicio
+            </a>
+            <a class="nav-item is-active" href="buscar/">
+              Buscar IP
+            </a>
+            <span class="nav-item">
+              <a class="button is-info is-inverted" href="admin/">
+                <span class="icon">
+                  <i class="icon-user"></i>
+                </span>
+                <span>Login</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </header>
+    </div>
+  <div class="container profile">
+
+    <div class="box">
+      <!-- Main container -->
+      <nav class="level">
+        <!-- Left side -->
+         <!-- Right side -->
+        <div class="level-right">
+          <p class="level-item"><strong>Buscar IP</strong></p>
+        </div>
+
+        <div class="level-right">
+          <div class="level-item">
+              
+                <form methon="GET" action"">
+            <p class="control has-addons">
+                    <input class="input" type="text" name="q" placeholder="Buscar...">
+                    <button class="button">
+                        Buscar
+                    </button>
+                
+            </p>
+            </form>
+          </div>
+        </div>
+
+      </nav>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="columns">
+        {%for SystemIP in results%}
+      <div class="column is-3">
+
+
+            
+
+            <div class="card">
+          <div class="card-image">
+            <figure class="is-4by3">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d420.7786319081992!2d{{SystemIP.longitud}}!3d{{SystemIP.latitud}}!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2smx!4v1495610269485" width="100%" height="100%" style="border:0" allowfullscreen></iframe>
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <span class="tag is-dark">#{{SystemIP.nombrecell}}</span>
+              <strong class="timestamp">IP {{SystemIP.ipv4}}</strong>
+            </div>
+          </div>
+          <footer class="card-footer">
+            <a class="card-footer-item" href="https://www.google.com/maps?ll={{SystemIP.latitud}},{{SystemIP.longitud}}&z=18&t=m&hl=en-US&gl=MX&mapclient=embed">Cargar Mapa</a>
+          </footer>
+        </div>
+               <br> 
+                <!-- <li>{{producto.nombre}} - {{producto.descripcion}} - {{producto.precio}}</li> -->
+           
+
+      </div>
+
+ {%empty%}
+                
+{%endfor%}
+    </div>
+
+
+  </div>
+</body>
+</html>

@@ -8,6 +8,8 @@ from django.utils.text import slugify
 
 # Create your models here.
 
+############################
+# Base de datos - tablas
 class SystemIP(models.Model):
     nombre = models.CharField(max_length = 100)
     latitud = models.DecimalField(max_digits=150, decimal_places=20)
@@ -19,6 +21,11 @@ class SystemIP(models.Model):
     def __unicode__(self):
         return self.nombre
 
+
+
+
+########################3
+# Finciones - metodos
 def create_slug(instance, nuevo_slug=None):
     slug = slugify(instance.nombre)
     if nuevo_slug is not None:
@@ -40,3 +47,4 @@ def producto_pre_save_reciever(sender, instance, *args, **kwargs):
         instance.slug = create_slug(instance)
 
 pre_save.connect(producto_pre_save_reciever, sender=SystemIP)
+

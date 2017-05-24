@@ -16,6 +16,8 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from django.conf import settings
+
 from app import views
 
 urlpatterns = [
@@ -23,5 +25,5 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^actualizaciones/', views.updates, name='updates info'),
     url(r'^info/', views.info, name='info app'),
-    # url(r'^$', views.home, name='home'),
+    url(r'^buscar/', views.busqueda, name='busqueda ip'),
 ]
